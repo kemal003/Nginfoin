@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#1597E5</color>
+    <color name="appbar_blue">#0089E3</color>
+    <color name="appbar_stroke">#0067AB</color>
 </resources>
