@@ -10,4 +10,5 @@
     <color name="blue">#1597E5</color>
     <color name="appbar_blue">#0089E3</color>
     <color name="appbar_stroke">#0067AB</color>
+    <color name="button_yellow">#FFB830</color>
 </resources>
