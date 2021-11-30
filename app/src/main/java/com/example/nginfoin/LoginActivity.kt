@@ -36,10 +36,10 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-//        val currentUser = mAuth.currentUser
-//        if (currentUser != null){
-//            goHome(currentUser)
-//        }
+        val currentUser = mAuth.currentUser
+        if (currentUser != null){
+            goHome(currentUser)
+        }
         binding.loginButton.setOnClickListener {
             val email = binding.emailUser.text.toString()
             val password = binding.passwordUser.text.toString()

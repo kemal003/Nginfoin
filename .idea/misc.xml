@@ -3,30 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< Updated upstream
-        <entry key="..\:/Users/Irza Pradana/OneDrive/Documents/GitHub/Nginfoin/app/src/main/res/drawable/ic_arrow_back.xml" value="0.26205128205128203" />
-        <entry key="..\:/Users/Irza Pradana/OneDrive/Documents/GitHub/Nginfoin/app/src/main/res/layout/activity_create.xml" value="0.4" />
-        <entry key="..\:/Users/Irza Pradana/OneDrive/Documents/GitHub/Nginfoin/app/src/main/res/layout/activity_edit.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/Irza Pradana/OneDrive/Documents/GitHub/Nginfoin/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/Irza Pradana/OneDrive/Documents/GitHub/Nginfoin/app/src/main/res/layout/activity_read.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/Irza Pradana/OneDrive/Documents/GitHub/Nginfoin/app/src/main/res/layout/appbar_create.xml" value="0.264" />
-        <entry key="..\:/Users/Irza Pradana/OneDrive/Documents/GitHub/Nginfoin/app/src/main/res/layout/appbar_edit.xml" value="0.264" />
-        <entry key="..\:/Users/Irza Pradana/OneDrive/Documents/GitHub/Nginfoin/app/src/main/res/layout/appbar_read.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Nginfoin/app/src/main/res/layout/activity_list.xml" value="0.16869300911854104" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Nginfoin/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Nginfoin/app/src/main/res/layout/appbar_list.xml" value="0.10663627152988855" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Nginfoin/app/src/main/res/layout/fragment_articles.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Nginfoin/app/src/main/res/layout/fragment_your_articles.xml" value="0.10663627152988855" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Nginfoin/app/src/main/res/layout/item_list_articles.xml" value="0.33" />
-=======
         <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/drawable/rounded_corner.xml" value="0.22135416666666666" />
-        <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/activity_login.xml" value="0.41041666666666665" />
+        <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/activity_list.xml" value="0.19152854511970535" />
+        <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/activity_login.xml" value="0.3870558375634518" />
         <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/activity_read.xml" value="0.20520833333333333" />
         <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/activity_register.xml" value="0.28882575757575757" />
         <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/fragment_articles.xml" value="0.3333333333333333" />
+        <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/fragment_blank.xml" value="0.33" />
+        <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/fragment_list_article_activity.xml" value="0.15885416666666666" />
         <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/fragment_your_articles.xml" value="0.3333333333333333" />
->>>>>>> Stashed changes
+        <entry key="..\:/KULIAH/Semester 5/Pemrograman Sistem Interaktif/Nginfoin/app/src/main/res/layout/item_list_articles.xml" value="0.33" />
       </map>
     </option>
   </component>
