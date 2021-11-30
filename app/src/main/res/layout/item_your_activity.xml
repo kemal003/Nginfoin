@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:layout_margin="20dp">
+    <TextView
+        android:layout_width="270dp"
+        android:layout_height="match_parent"
+        android:text="Haldfsfj dsaklfj daslkfjd ksalfjdaslk fjdas lkfla dasfdasfd"
+        android:maxLines="4"
+        android:textSize="18sp"
+        android:layout_centerInParent="true"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/blue"
+            android:text="Edit"
+            android:textSize="14sp"
+            android:textColor="@color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </Button>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:backgroundTint="#ff0000"
+            android:text="Delete"
+            android:textColor="@color/white"
+            android:textSize="14sp">
+
+        </Button>
+    </LinearLayout>
+
+
+</LinearLayout>
