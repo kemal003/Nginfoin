@@ -9,14 +9,11 @@ class ViewPagerAdapter(supportFragmentManager: FragmentManager) : FragmentPagerA
     private val mFragmentList = ArrayList<Fragment>()
     private val mFragmentTitleList = ArrayList<String>()
 
-
-
-    override fun getItem(position: Int): Fragment {
-        TODO("Not yet implemented")
-    }
-
     override fun getCount(): Int {
         return mFragmentList.size
+    }
+    override fun getItem(position: Int): Fragment {
+        return mFragmentList[position]
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
