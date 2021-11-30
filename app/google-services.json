@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "625003201814",
+    "firebase_url": "https://nginfoin-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "nginfoin",
+    "storage_bucket": "nginfoin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625003201814:android:cb9d0d06fcb63e2f653c37",
+        "android_client_info": {
+          "package_name": "com.example.nginfoin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625003201814-5npou7vnl9ui33lbaluurspk3gb2chkj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nginfoin",
+            "certificate_hash": "94c155fcab700bd55c9719aee7532d21b049503e"
+          }
+        },
+        {
+          "client_id": "625003201814-mugtb76kpnkb5ssmf8ts1n1l4smf1lpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHQRgbE7MAz_vgJyFZyafUonAvx2_MjOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625003201814-mugtb76kpnkb5ssmf8ts1n1l4smf1lpn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
