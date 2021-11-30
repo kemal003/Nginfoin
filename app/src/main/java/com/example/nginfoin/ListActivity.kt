@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -35,12 +36,16 @@ class ListActivity : AppCompatActivity() {
 
         viewPager.adapter = fragmentAdapter
         tabLayout.setupWithViewPager(viewPager)
+
+        findViewById<TextView>(R.id.logout).setOnClickListener {
+            backToLogin()
+        }
     }
 
     override fun onBackPressed() {
         if (doubleBackExit){
             super.onBackPressed()
-            backToLogin()
+            onDestroy()
         }
 
         this.doubleBackExit = true;

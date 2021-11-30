@@ -28,28 +28,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
-                android:padding="10dp"
                 android:minHeight="48dp"
+                android:padding="10dp"
                 android:textColor="@color/backBlue"
                 android:textColorHint="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <EditText
-                android:id="@+id/text_input_create"
+                android:id="@+id/text_input_edit"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:padding="10dp"
                 android:layout_marginTop="10dp"
-                android:scrollbars="vertical"
-                android:gravity="top"
-                android:textSize="14sp"
-                android:overScrollMode="never"
-                android:lines="9999999"
-                android:scrollbarStyle="insideInset"
                 android:fontFamily="@font/roboto_regular"
-               />
+                android:gravity="top"
+                android:lines="9999999"
+                android:overScrollMode="never"
+                android:padding="10dp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:textSize="14sp"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 

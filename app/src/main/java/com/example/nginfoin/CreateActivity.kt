@@ -4,6 +4,8 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -25,12 +27,19 @@ class CreateActivity : AppCompatActivity() {
     private lateinit var currentUser : FirebaseUser
     private lateinit var mAuth: FirebaseAuth
     private lateinit var listArticle : ArrayList<Article>
+    private lateinit var btn_create : Button
+    private lateinit var btn_back : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateBinding.inflate(layoutInflater)
         setContentView(binding.root)
         mAuth = Firebase.auth
+        supportActionBar?.hide()
+
+        binding.etTitleCreate.addTextChangedListener(textWatcher)
+        binding.textInputCreate.addTextChangedListener(textWatcher)
+
         try {
             currentUser = mAuth.currentUser!!
             println("==============================${currentUser.uid}=========================")
@@ -39,12 +48,12 @@ class CreateActivity : AppCompatActivity() {
         }
         listArticle = arrayListOf()
         val include_create = findViewById<View>(R.id.include_appbar_create)
-        val btn_create = include_create.findViewById<Button>(R.id.button_create)
+        btn_create = include_create.findViewById<Button>(R.id.button_create)
         btn_create.setOnClickListener {
             Toast.makeText(this, "Artikel telah dibuat", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, ListActivity::class.java))
         }
-        val btn_back = findViewById<ImageView>(R.id.back_create)
+        btn_back = findViewById<ImageView>(R.id.back_create)
         btn_back.setOnClickListener {
             startActivity(Intent(this, ListActivity::class.java))
         }
@@ -100,5 +109,29 @@ class CreateActivity : AppCompatActivity() {
             lastId = item.idArticle
         }
         return (lastId + 1)
+    }
+
+    private val textWatcher = object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+        }
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            val titleInput = binding.etTitleCreate.text.toString().trim()
+            val contentInput = binding.textInputCreate.text.toString()
+
+            if (titleInput.isEmpty() || contentInput.isEmpty()){
+                btn_create.isEnabled = false
+            }
+        }
+
+        override fun afterTextChanged(p0: Editable?) {
+            val titleInput = binding.etTitleCreate.text.toString().trim()
+            val contentInput = binding.textInputCreate.text.toString()
+
+            if (!titleInput.isEmpty() && !contentInput.isEmpty()){
+                btn_create.isEnabled = true
+            }
+        }
     }
 }

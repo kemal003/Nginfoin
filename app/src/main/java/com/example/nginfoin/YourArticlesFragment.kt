@@ -1,10 +1,12 @@
 package com.example.nginfoin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -13,6 +15,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import java.lang.Exception
 
 class YourArticlesFragment : Fragment() {
     private lateinit var databaseRef : DatabaseReference
@@ -26,7 +29,12 @@ class YourArticlesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         databaseRef = FirebaseDatabase.getInstance().getReference("Users")
         mAuth = Firebase.auth
-        currentUser = mAuth.currentUser!!
+        try {
+            currentUser = mAuth.currentUser!!
+        } catch (e: Exception){
+            goLogin()
+            return
+        }
         listArticle = arrayListOf()
         articleRecyclerView = view.findViewById(R.id.recycle_view_yourArticles)
         articleAdapter = YourArticlesAdapter(requireContext())
@@ -34,6 +42,11 @@ class YourArticlesFragment : Fragment() {
         articleRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 //        println(listArticle.get(0).title)
         articleRecyclerView.adapter = articleAdapter
+
+        view.findViewById<ImageButton>(R.id.btn_tambah).setOnClickListener{
+            val intent = Intent(context, CreateActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateView(
@@ -64,5 +77,10 @@ class YourArticlesFragment : Fragment() {
                 TODO("Not yet implemented")
             }
         })
+    }
+
+    private fun goLogin(){
+        val intent = Intent(context, LoginActivity::class.java)
+        startActivity(intent)
     }
 }

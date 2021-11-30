@@ -20,21 +20,17 @@
         android:paddingVertical="50dp"
         android:paddingHorizontal="30dp">
 
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nginfo.in"
-            android:gravity="center"
-            android:fontFamily="@font/encodesans_bold"
-            android:textSize="30sp"
-            android:layout_marginTop="70dp"
-            android:textColor="@color/white"/>
+            android:layout_height="200dp"
+            android:src="@drawable/nginfoin"
+            android:gravity="center"/>
 
         <EditText
             android:id="@+id/emailUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="@color/cream"
             android:fontFamily="@font/roboto_regular"
