@@ -11,4 +11,7 @@
     <color name="appbar_blue">#0089E3</color>
     <color name="appbar_stroke">#0067AB</color>
     <color name="button_yellow">#FFB830</color>
+
+    <color name="backBlue">#3DB2FF</color>
+    <color name="cream">#FFEDDA</color>
 </resources>
