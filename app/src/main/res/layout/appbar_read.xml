@@ -5,16 +5,27 @@
     android:layout_width="match_parent"
     android:background="@drawable/appbar">
 
+        <ImageView
+            android:id="@+id/back_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="18dp"
+            />
+
         <TextView
+            android:id="@+id/tv_read_article"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="18dp"
             android:gravity="center"
             android:text="Read Article"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             />
-
 
 </androidx.appcompat.widget.Toolbar>

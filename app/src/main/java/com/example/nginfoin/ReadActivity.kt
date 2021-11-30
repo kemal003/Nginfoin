@@ -1,31 +1,29 @@
 package com.example.nginfoin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import com.example.nginfoin.databinding.ActivityReadBinding
 
 class ReadActivity : AppCompatActivity() {
-
-
+    private lateinit var binding : ActivityReadBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_read)
-        val toolbar : Toolbar = findViewById<Toolbar>(R.id.appbar_read)
-        setSupportActionBar(toolbar)
-        val supportBar = supportActionBar
-        supportBar?.setDisplayHomeAsUpEnabled(true)
-        val article_title : TextView = findViewById<TextView>(R.id.article_title)
-        val article_content : TextView = findViewById<TextView>(R.id.article_content)
+        binding = ActivityReadBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportActionBar?.hide()
+
         val title = intent.getStringExtra("title")
         val content = intent.getStringExtra("content")
-        article_title.text = title
-        article_content.text = content
-    }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
+        binding.articleTitle.text = title
+        binding.articleContent.text = content
 
-}
+        val btn_read = binding.includeAppbarRead.backRead
+        btn_read.setOnClickListener{
+            finish()
+        }
+    }
+    }
