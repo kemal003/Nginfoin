@@ -99,8 +99,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goHome(user: FirebaseUser?) {
-        val readActivity = Intent(this, ReadActivity::class.java)
-        startActivity(readActivity)
+        val listActivity = Intent(this, ListActivity::class.java)
+        startActivity(listActivity)
     }
 
     private fun goRegister(){
