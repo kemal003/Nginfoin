@@ -41,13 +41,12 @@ class RegisterActivity : AppCompatActivity() {
         super.onStart()
         binding.registerButton.setOnClickListener {
             println("=================TESTING =====================")
-            val username = binding.usernameBaru.text.toString()
             val email = binding.emailBaru.text.toString()
             val nama = binding.namaBaru.text.toString()
             val password = binding.passwordBaru.text.toString()
             val passwordConfirm = binding.passwordBaruConfirm.text.toString()
             if (password.equals(passwordConfirm)){
-                register(email, password, nama, username)
+                register(email, password, nama)
             } else {
                 binding.notMatch.visibility = View.VISIBLE
             }
@@ -58,14 +57,13 @@ class RegisterActivity : AppCompatActivity() {
         email: String,
         password: String,
         nama: String,
-        username: String
     ){
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this){ task ->
             binding.progressBarRegister.visibility = View.VISIBLE
             if (task.isSuccessful){
                 val user = mAuth.currentUser
-                databaseRef = Firebase.database.reference.child("Users").child(username)
-                val newUser = Users(username, email, nama)
+                databaseRef = Firebase.database.reference.child("Users").child(user!!.uid)
+                val newUser = Users(email, nama)
                 databaseRef.setValue(newUser)
                 binding.progressBarRegister.visibility = View.INVISIBLE
                 goHome(user)
