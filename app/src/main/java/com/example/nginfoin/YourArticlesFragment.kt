@@ -17,7 +17,7 @@ import com.google.firebase.ktx.Firebase
 class YourArticlesFragment : Fragment() {
     private lateinit var databaseRef : DatabaseReference
     private lateinit var listArticle: ArrayList<Article>
-    private lateinit var articleAdapter: ArticlesAdapter
+    private lateinit var articleAdapter: YourArticlesAdapter
     private lateinit var articleRecyclerView: RecyclerView
     private lateinit var currentUser: FirebaseUser
     private lateinit var mAuth: FirebaseAuth
@@ -29,7 +29,7 @@ class YourArticlesFragment : Fragment() {
         currentUser = mAuth.currentUser!!
         listArticle = arrayListOf()
         articleRecyclerView = view.findViewById(R.id.recycle_view_yourArticles)
-        articleAdapter = ArticlesAdapter(requireContext())
+        articleAdapter = YourArticlesAdapter(requireContext())
         getListArticle()
         articleRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 //        println(listArticle.get(0).title)

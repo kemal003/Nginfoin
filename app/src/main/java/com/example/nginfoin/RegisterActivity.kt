@@ -51,6 +51,11 @@ class RegisterActivity : AppCompatActivity() {
                 binding.notMatch.visibility = View.VISIBLE
             }
         }
+
+        binding.logIn.setOnClickListener {
+            goLogin()
+            finish()
+        }
     }
 
     private fun register(
@@ -78,6 +83,11 @@ class RegisterActivity : AppCompatActivity() {
     private fun goHome(user: FirebaseUser?) {
         val listActivity = Intent(this, ListActivity::class.java)
         startActivity(listActivity)
+    }
+
+    private fun goLogin() {
+        val loginActivity = Intent(this, LoginActivity::class.java)
+        startActivity(loginActivity)
     }
 
     private val textWatcher = object : TextWatcher {
