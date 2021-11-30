@@ -57,7 +57,12 @@ class LoginActivity : AppCompatActivity() {
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            val usernameInput = binding.emailUser.text.toString().trim()
+            val passwordInput = binding.passwordUser.text.toString()
 
+            if (usernameInput.isEmpty() || passwordInput.isEmpty()){
+                binding.loginButton.isEnabled = false
+            }
         }
 
         override fun afterTextChanged(p0: Editable?) {

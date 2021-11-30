@@ -17,10 +17,13 @@
             android:exported="false" />
         <activity
             android:name=".CreateActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ListActivity"
             android:exported="false" />
+        <activity
+            android:name=".ReadActivity"
+            android:exported="true"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -30,9 +33,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ReadActivity"
-            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

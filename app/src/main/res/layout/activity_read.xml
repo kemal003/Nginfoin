@@ -26,16 +26,25 @@
                 android:fontFamily="@font/encodesans_bold"
                 android:text="Title Lorem ipsum dolor amet cosectureire unam habeas"
                 android:textColor="@color/blue"
-                android:textSize="40sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/article_writer"
+                android:layout_height="wrap_content"
+                android:text="Writer"
+                android:layout_marginTop="20dp"
+                android:textSize="14sp"/>
+
+            <TextView
                 android:id="@+id/article_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/black"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet libero sed augue semper luctus vitae nec lectus. Ut mattis tellus vel ipsum laoreet, non pulvinar dolor tincidunt. Duis eu elit nec tortor imperdiet dictum et ac dui. Ut pellentesque varius risus. Praesent condimentum finibus elit,quis egestas diam."
                 android:layout_marginTop="20dp"

@@ -14,15 +14,18 @@ class ListArticleFragment : Fragment() {
 
     private lateinit var databaseRef : DatabaseReference
     private lateinit var listArticle: ArrayList<Article>
+    private lateinit var articleAdapter: ArticlesAdapter
     private lateinit var articleRecyclerView: RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         listArticle = arrayListOf()
         articleRecyclerView = view.findViewById(R.id.recycle_view_articles)
+        articleAdapter = ArticlesAdapter(requireContext())
         getListArticle()
         articleRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 //        println(listArticle.get(0).title)
+        articleRecyclerView.adapter = articleAdapter
     }
 
     override fun onCreateView(
@@ -41,7 +44,8 @@ class ListArticleFragment : Fragment() {
                         val article = articleSnapshot.getValue<Article>()
                         listArticle.add(article!!)
                     }
-                    articleRecyclerView.adapter = ArticlesAdapter(listArticle)
+                    articleAdapter.setAllData(listArticle)
+                    listArticle.clear()
                 }
             }
 

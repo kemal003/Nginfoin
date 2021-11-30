@@ -1,21 +1,24 @@
 package com.example.nginfoin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.example.nginfoin.databinding.ActivityListBinding
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 
 class ListActivity : AppCompatActivity() {
-
-    private lateinit var databaseRef : DatabaseReference
-    private lateinit var listArticle: ArrayList<Article>
     private lateinit var binding: ActivityListBinding
-    private lateinit var articleRecyclerView : RecyclerView
+    private var doubleBackExit = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,42 +35,24 @@ class ListActivity : AppCompatActivity() {
 
         viewPager.adapter = fragmentAdapter
         tabLayout.setupWithViewPager(viewPager)
-
-//        listArticle = arrayListOf()
-//        articleRecyclerView = binding.recyclerView2
-//        articleRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-//        databaseRef = FirebaseDatabase.getInstance().getReference("Article").child("4")
-//        databaseRef.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                val value = snapshot.getValue<Article>()
-//                println("==================$value======================")
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
-//            }
-//        })
-////        println("====================$article}=====================")
-//        getListArticles()
     }
 
+    override fun onBackPressed() {
+        if (doubleBackExit){
+            super.onBackPressed()
+            backToLogin()
+        }
 
-    private fun getListArticles(){
-        databaseRef = FirebaseDatabase.getInstance().getReference("Article")
-        databaseRef.addValueEventListener(object: ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    for(articleSnapshot in snapshot.children){
-                        val article = articleSnapshot.getValue<Article>()
-                        listArticle.add(article!!)
-                    }
-                    articleRecyclerView.adapter = ArticlesAdapter(listArticle)
-                }
-            }
+        this.doubleBackExit = true;
+        Toast.makeText(this, "Tekan sekali lagi untuk keluar", Toast.LENGTH_SHORT).show()
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
+        Handler(Looper.getMainLooper()).postDelayed({
+            doubleBackExit = false }, 1000)
+    }
+
+    private fun backToLogin(){
+        Firebase.auth.signOut()
+        val login = Intent(this, LoginActivity::class.java)
+        startActivity(login)
     }
  }

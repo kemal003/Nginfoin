@@ -17,13 +17,15 @@ class ReadActivity : AppCompatActivity() {
 
         val title = intent.getStringExtra("title")
         val content = intent.getStringExtra("content")
+        val writer = intent.getStringExtra("writer")
 
         binding.articleTitle.text = title
         binding.articleContent.text = content
+        binding.articleWriter.text = "Writer: $writer"
 
         val btn_read = binding.includeAppbarRead.backRead
         btn_read.setOnClickListener{
             finish()
         }
     }
-    }
+}

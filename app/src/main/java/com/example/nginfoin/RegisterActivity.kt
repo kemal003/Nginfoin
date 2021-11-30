@@ -28,6 +28,7 @@ class RegisterActivity : AppCompatActivity() {
         mAuth = Firebase.auth
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         binding.emailBaru.addTextChangedListener(textWatcher)
         binding.passwordBaru.addTextChangedListener(textWatcher)
@@ -40,7 +41,6 @@ class RegisterActivity : AppCompatActivity() {
         super.onStart()
         binding.registerButton.setOnClickListener {
             println("=================TESTING =====================")
-            binding.progressBarRegister.visibility = View.VISIBLE
             val username = binding.usernameBaru.text.toString()
             val email = binding.emailBaru.text.toString()
             val nama = binding.namaBaru.text.toString()
@@ -48,12 +48,8 @@ class RegisterActivity : AppCompatActivity() {
             val passwordConfirm = binding.passwordBaruConfirm.text.toString()
             if (password.equals(passwordConfirm)){
                 register(email, password, nama, username)
-                println("=================TESTING =====================")
-                binding.progressBarRegister.visibility = View.INVISIBLE
             } else {
-                println("=================TESTING=======================")
                 binding.notMatch.visibility = View.VISIBLE
-                binding.progressBarRegister.visibility = View.INVISIBLE
             }
         }
     }
@@ -65,14 +61,17 @@ class RegisterActivity : AppCompatActivity() {
         username: String
     ){
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this){ task ->
+            binding.progressBarRegister.visibility = View.VISIBLE
             if (task.isSuccessful){
                 val user = mAuth.currentUser
                 databaseRef = Firebase.database.reference.child("Users").child(username)
                 val newUser = Users(username, email, nama)
                 databaseRef.setValue(newUser)
+                binding.progressBarRegister.visibility = View.INVISIBLE
                 goHome(user)
             } else {
                 Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                binding.progressBarRegister.visibility = View.INVISIBLE
                 Toast.makeText(this, "Account Register Failed", Toast.LENGTH_SHORT).show()
             }
         }
@@ -89,7 +88,18 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            binding.notMatch.visibility = View.INVISIBLE
+            val usernameInput = binding.emailBaru.text.toString().trim()
+            val passwordInput = binding.passwordBaru.text.toString()
+            val passwordConfirm = binding.passwordBaruConfirm.text.toString()
+            val emailInput = binding.emailBaru.text.toString().trim()
+            val namaLengkap = binding.namaBaru.text.toString()
 
+            if (
+                usernameInput.isEmpty() || passwordInput.isEmpty() || passwordConfirm.isEmpty() || emailInput.isEmpty() || namaLengkap.isEmpty()
+            ){
+                binding.registerButton.isEnabled = false
+            }
         }
 
         override fun afterTextChanged(p0: Editable?) {
