@@ -116,7 +116,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onBackPressed() {
         if (doubleBackExit){
             super.onBackPressed()
-            onDestroy()
+            finish()
         }
 
         this.doubleBackExit = true;
